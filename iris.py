@@ -27,8 +27,8 @@ st.subheader('User Input parameters')
 st.write(df)
 
 iris = pd.read_csv('https://raw.githubusercontent.com/aaa-yanbin/iris-june/main/IRIS.csv')
-X = iris.data
-Y = iris.target
+X = pd.DataFrame(iris.data, columns = ['sepal_length','sepal_width'])
+Y = pd.DataFrame(iris.data, columns = ['petal_length','petal_width'])
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
